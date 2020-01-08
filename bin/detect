@@ -1,0 +1,5 @@
+ 
+#!/bin/bash
+
+echo "Lua buildpack"
+exit 0;

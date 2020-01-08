@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "-----> Installing liblua5.1.so"
+
+set -e
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+mkdir -p $BUILD_DIR
+
+echo "-----> Copying liblua5.1 libraries"
+cp liblua5.1.so "$BUILD_DIR/lib"
+mkdir -p "$BUILD_DIR/.profile.d"
+echo export LUA_LIB="/app/lib/liblua5.1.so" > "$BUILD_DIR/.profile.d/lua_buildpack.sh"
+chmod +x "$BUILD_DIR/.profile.d/lua_buildpack.sh"
